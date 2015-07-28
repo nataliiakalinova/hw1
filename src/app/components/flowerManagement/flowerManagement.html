@@ -1,0 +1,33 @@
+<div ng-controller="flowerManagementCtrl">
+  <br/>
+    <form name="addFlower" ng-submit="createFlower()">
+      <md-input-container>
+        <input ng-model="flower.name" type="text" placeholder="Name" required>
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="flower.frequency" type="number" placeholder="Frequency of watering (days)" required min="1">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="flower.amount" type="number" placeholder="Amount of water (dl)" required min="1">
+      </md-input-container>
+      <md-input-container>
+        <input ng-model="flower.comment" type="text" placeholder="Comment">
+      </md-input-container>
+      <md-button class="md-raised md-primary" type="submit">Create</md-button>
+    </form>
+
+  <br />
+  <md-divider></md-divider>
+  <br />
+
+  <div layout="row" layout-margin ng-repeat="flower in flowers">
+    <div layout="column" flex > {{ flower.name }} </div>
+    <div layout="column" flex > {{ flower.frequency }} </div>
+    <div layout="column" flex > {{ flower.amount }} </div>
+    <div layout="column" flex > {{ flower.comment }} </div>
+    <div layout="column" flex > {{ flower.added | date:'medium'}} </div>
+    <div layout="column" flex > <button class="md-raised md-warn" ng-click="delete(flower)">Edit</button> </div>
+    <div layout="column" flex > <button class="md-raised md-warn" ng-click="delete(flower)">Delete</button> </div>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="flowerListCtrl" layout="row"  layout-align="center center">
+  <br/>
+
+  <div layout="column" flex="40" >
+    <md-card ng-repeat="flower in flowers" layout-align="center center" >
+    <img ng-src="../assets/images/flower.jpg" style="width: 30%" alt="Washed Out" class="md-padding">
+    <md-card-content>
+      <h2 class="md-title">Name: {{flower.name}}</h2>
+      <div><b>Frequency of watering (days):</b> {{flower.frequency}} </div>
+      <div><b>Amount of water (dl):</b> {{flower.amount}} </div>
+      <div><b>Comment:</b> {{flower.comment}} </div>
+      <div><b>Added:</b> {{flower.added}} </div>
+    </md-card-content>
+  </md-card>
+  </div>
+
+  <br/>
+</div>
